@@ -27,4 +27,38 @@
     color:#fff;
     background-color: rgb(30, 235, 30);
 }
+
+.hidden{
+    display:none
+}
  
+.quiz-container{
+    margin-bottom:20px;
+    margin-top:20px;
+    text-align: center;
+    opacity: 0.5;
+}
+
+.question-container, 
+.timer-container{
+    margin-bottom: 20px;
+}
+
+#choices{
+    list-style-type: none;
+    padding: 0;
+}
+
+#choice-btn{
+    color:#fff;
+    background-color: rgb(30, 235, 30);
+    width: 90%;
+    padding:10px;
+    margin:5px 10px;
+    border:1px solid white;
+}
+
+#choices li:last-of-type{
+    padding-bottom: 20px;
+}
+
