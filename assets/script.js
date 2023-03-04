@@ -55,3 +55,14 @@ const questions = [
     }
 ]
 
+// DOM elements
+const startBtn = document.getElementById("start-btn");
+const quizContainer = document.querySelector(".quiz-container");
+const questionEl = document.getElementById("question");
+const choicesEl = document.getElementById("choices");
+const scoreContainer = document.querySelector(".score-container");
+const scoreEl = document.getElementById("score");
+const initialsForm = document.getElementById("initials-form");
+const initialsInput = document.getElementById("initials");
+const timeEl = document.getElementById("time");
+const submitBtn = document.getElementById("submit-btn");
