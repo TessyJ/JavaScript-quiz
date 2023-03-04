@@ -23,7 +23,7 @@
 
             <!--Question Container-->
             <div class="question-container">
-                <h2 id="question"></h2>
+                <h2 id="question">Who is Michael and what does he do for a living</h2>
 
                 <!--Question Options-->
                 <ul id="choices">
@@ -35,6 +35,23 @@
             </div>
 
         </div>
+
+        <!--Display form to input scores will be hidden until test ended-->
+        <div class="score-container  ">
+            <h2>Your Score: <span id="score">0</span></h2>
+            <form id="initials-form">
+                <label for="initials">Enter your initials:</label>
+                <input type="text" id="initials" name="initials">
+                <button type="submit" id="submit-btn">Save</button>
+            </form>
+        </div>
+
+        <!-- Leaderboards-->
+        <div id="leaderboard-container">
+            <h2>Leaderboard</h2>
+            <ul id="leaderboard-list"></ul>
+        </div>
+
     </div>
     
 

@@ -25,7 +25,7 @@
     padding:10px 15px;
     border-radius: 10px;
     color:#fff;
-    background-color: rgb(30, 235, 30);
+    background-color: #4CAF50;
 }
 
 .hidden{
@@ -44,6 +44,10 @@
     margin-bottom: 20px;
 }
 
+#question{
+    text-align: left;
+    padding:32px;
+}
 #choices{
     list-style-type: none;
     padding: 0;
@@ -51,10 +55,12 @@
 
 #choice-btn{
     color:#fff;
-    background-color: rgb(30, 235, 30);
+    background-color:#4CAF50;
     width: 90%;
     padding:10px;
     margin:5px 10px;
+    border-radius: 9px;
+    cursor: pointer;
     border:1px solid white;
 }
 
@@ -62,3 +68,37 @@
     padding-bottom: 20px;
 }
 
+.score-container {
+    text-align: center;
+}
+
+#initials-form {
+    margin-top: 20px;
+}
+
+#initials-form label, #initials-form input, #initials-form button {
+    margin: 5px;
+    padding: 5px;
+    font-size: 16px;
+}
+
+#initials-form input {
+    width: 100px;
+}
+
+#initials-form button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+#initials-form button:hover {
+    background-color: #3e8e41;
+}
+
+#leaderboard-container{
+    padding: 25px; 
+}
