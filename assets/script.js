@@ -152,3 +152,33 @@ function checkAnswer(choice) {
     }
 }
 
+// Now let's save score with our initials
+function saveScore(event) {
+    event.preventDefault();
+    const initials = initialsInput.value.trim();
+    if (initials !== "") {
+        const scores = JSON.parse(localStorage.getItem("scores")) || [];
+        scores.push({
+            initials: initials,
+            score: score
+        });
+        scores.sort((a, b) => b.score - a.score);
+        localStorage.setItem("scores", JSON.stringify(scores));
+        displayScores();
+    }
+}
+
+// display scores after scores has been submitted 
+function displayScores() {
+    const scores = JSON.parse(localStorage.getItem("scores")) || [];
+    const scoresList = document.getElementById("leaderboard-list");
+    scoresList.innerHTML = "";
+    scores.forEach((score, index) => {
+        if (index < 10) {
+            const li = document.createElement("li");
+            li.textContent = `${score.initials} - ${score.score}`;
+            scoresList.appendChild(li);
+        }
+    });
+}
+
