@@ -108,6 +108,14 @@ function startGame() {
     timer = setInterval(updateTimer, 1000);
 }
 
+//End game function
+function endGame() {
+    clearInterval(timer);
+    quizContainer.classList.add("hidden");
+    scoreContainer.classList.remove("hidden");
+    scoreEl.textContent = score;
+}
+
 //update the timer
 function updateTimer() {
     timeLeft--;
