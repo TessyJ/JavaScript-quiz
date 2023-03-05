@@ -1,6 +1,6 @@
 // Create the Questions List 
 
-const questions = [
+var questions = [
 
     {
         "question":"What is the correct syntax for referring to an external script called 'xxx.js'?",
@@ -56,13 +56,43 @@ const questions = [
 ]
 
 // DOM elements
-const startBtn = document.getElementById("start-btn");
-const quizContainer = document.querySelector(".quiz-container");
-const questionEl = document.getElementById("question");
-const choicesEl = document.getElementById("choices");
-const scoreContainer = document.querySelector(".score-container");
-const scoreEl = document.getElementById("score");
-const initialsForm = document.getElementById("initials-form");
-const initialsInput = document.getElementById("initials");
-const timeEl = document.getElementById("time");
-const submitBtn = document.getElementById("submit-btn");
+var startBtn = document.getElementById("start-button");
+var quizContainer = document.querySelector(".quiz-container");
+var questionEl = document.getElementById("question");
+var choicesEl = document.getElementById("choices");
+var scoreContainer = document.querySelector(".score-container");
+var scoreEl = document.getElementById("score");
+var initialsForm = document.getElementById("initials-form");
+var initialsInput = document.getElementById("initials");
+var timeEl = document.getElementById("time");
+var submitBtn = document.getElementById("submit-btn");
+
+// Event listeners
+startBtn.addEventListener("click", startGame);
+
+// Display question and answer choices
+const  displayQuestion = () => {
+    const q = questions[currentQuestion];
+    questionEl.textContent = q.question;
+    choicesEl.innerHTML = "";
+    q.choices.forEach((choice, index) => {
+        const li = document.createElement("li");
+        const btn = document.createElement("button");
+        btn.classList.add("choice-btn");
+        btn.textContent = `${index + 1}. ${choice}`;
+        btn.addEventListener("click", () => {
+            checkAnswer(choice);
+        });
+        li.appendChild(btn);
+        choicesEl.appendChild(li);
+    });
+}
+
+
+//Start the Quiz
+
+function startGame() { 
+    startBtn.classList.add("hidden");
+    quizContainer.classList.remove("hidden");
+    displayQuestion(); 
+}
