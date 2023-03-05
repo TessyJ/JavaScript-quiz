@@ -78,6 +78,8 @@ let timer;
 
 // Event listeners
 startBtn.addEventListener("click", startGame);
+initialsForm.addEventListener("submit", saveScore);
+submitBtn.addEventListener("click", showLeaderboard);
 
 // Display question and answer choices
 const  displayQuestion = () => {
@@ -182,3 +184,10 @@ function displayScores() {
     });
 }
 
+//show leaderboards
+
+function showLeaderboard() {
+    const leaderboard = document.getElementById("leaderboard-container");
+    leaderboard.style.display = "block";
+    displayScores();
+}
