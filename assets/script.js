@@ -67,6 +67,15 @@ var initialsInput = document.getElementById("initials");
 var timeEl = document.getElementById("time");
 var submitBtn = document.getElementById("submit-btn");
 
+// Other variables
+const numQuestions = questions.length;
+const maxTime = 60;
+let currentQuestion = 0;
+let score = 0;
+let timeLeft = maxTime;
+let timer;
+
+
 // Event listeners
 startBtn.addEventListener("click", startGame);
 
@@ -92,7 +101,46 @@ const  displayQuestion = () => {
 //Start the Quiz
 
 function startGame() { 
+    shuffleQuestion(questions);
     startBtn.classList.add("hidden");
     quizContainer.classList.remove("hidden");
-    displayQuestion(); 
+    displayQuestion();
+    timer = setInterval(updateTimer, 1000);
 }
+
+//update the timer
+function updateTimer() {
+    timeLeft--;
+    if (timeLeft < 0) {
+        timeLeft = 0;
+        endGame();
+    }
+    timeEl.textContent = timeLeft;
+}
+
+//shufflequestions 
+function shuffleQuestion(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+}
+
+//check answer if correct
+function checkAnswer(choice) {
+    if (choice === questions[currentQuestion].answer) {
+        score++;
+    } else {
+        timeLeft -= 10;
+        if (timeLeft < 0) {
+            timeLeft = 0;
+        }
+    }
+    currentQuestion++;
+    if (currentQuestion >= numQuestions || timeLeft === 0) {
+        endGame();
+    } else {
+        displayQuestion();
+    }
+}
+
