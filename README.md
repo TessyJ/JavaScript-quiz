@@ -7,8 +7,8 @@ https://tessyj.github.io/javascript-quiz/
 https://github.com/TessyJ/javascript-quiz
 
 # Description 
- This webpage create a small quiz based on javascript.
- It saevs the intiials of the users at the end of the score and also minuses 10 second out of the userstime whenever an answer is incorrect
+ This webpage creates a small quiz based on javascript.
+ It saves the users' initials at the end of the score and minuses 10 seconds out of the user's time whenever an answer is incorrect.
 
 # Screen Shot
 <img width="1709" alt="Screenshot1" src="https://tessyj.github.io/javascript-quiz/assets/images/shot1.png"> <br> <br>
